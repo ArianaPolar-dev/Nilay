@@ -159,8 +159,6 @@ section {
   text-shadow: 0 0 40px rgba(250,128,114,0.4);
 }
 
-/* ── CAMBIAR AQUÍ: pon el nombre de ella en .hero-name em ── */
-
 .hero-sub {
   font-family: var(--font-hand);
   font-size: 22px; color: var(--salmon-lt);
@@ -182,8 +180,8 @@ section {
 .hero-btn:hover { transform: scale(1.05); box-shadow: 0 8px 32px rgba(250,128,114,0.6); }
 .confetti-burst { position: absolute; inset: 0; pointer-events: none; z-index: 2; }
 
-/* ─── ANIME SECTION ────────────────────────────────── */
-#anime { background: var(--dark2); }
+/* ─── PERSONAJES SECTION ────────────────────────────── */
+#personajes { background: var(--dark2); }
 .tabs {
   display: flex; gap: 8px; flex-wrap: wrap; justify-content: center;
   margin-bottom: 24px; position: relative; z-index: 1;
@@ -207,7 +205,10 @@ section {
   border: 1.5px solid rgba(250,128,114,0.25);
   border-radius: 20px; overflow: hidden;
   position: relative;
+  cursor: pointer;
+  transition: transform 0.2s;
 }
+.char-card:hover { transform: scale(1.03); }
 .char-media {
   width: 100%; aspect-ratio: 4/3; object-fit: cover;
   display: block; background: var(--dark);
@@ -224,21 +225,17 @@ section {
   font-family: var(--font-display); font-size: 26px;
   color: var(--salmon); margin-bottom: 4px;
 }
-.char-from { font-size: 11px; color: var(--muted); letter-spacing: 2px; margin-bottom: 10px; }
-.char-note {
-  font-family: var(--font-hand); font-size: 17px;
-  color: var(--cream); line-height: 1.5;
-  background: rgba(250,128,114,0.08);
-  padding: 10px 14px; border-radius: 12px;
-  border-left: 3px solid var(--salmon);
-}
+.char-from { font-size: 11px; color: var(--muted); letter-spacing: 2px; }
 
 /* ─── VIDEO EMBED ───────────────────────────────────── */
 .video-wrap {
   width: 100%; aspect-ratio: 16/9; border-radius: 14px;
   overflow: hidden; margin-bottom: 14px;
   border: 1.5px solid rgba(250,128,114,0.2);
+  cursor: pointer;
+  transition: transform 0.2s;
 }
+.video-wrap:hover { transform: scale(1.02); }
 .video-wrap iframe, .video-wrap video {
   width: 100%; height: 100%; border: none; display: block;
 }
@@ -249,19 +246,18 @@ section {
   gap: 8px; color: var(--muted); font-size: 13px;
   border-radius: 14px; border: 1.5px dashed rgba(250,128,114,0.3);
   margin-bottom: 14px;
+  cursor: pointer;
+  transition: transform 0.2s;
 }
+.video-placeholder:hover { transform: scale(1.02); }
 
-/* ─── MANGA SECTION ────────────────────────────────── */
-#manga { background: var(--cream); color: var(--dark); }
-#manga .sec-label { color: var(--carmine); }
-#manga .sec-title { color: var(--dark); }
-#manga .sec-title span { color: var(--carmine); }
+/* ─── WIND BREAKER SECTION ────────────────────────────── */
+#windbreaker { background: var(--cream); color: var(--dark); }
+#windbreaker .sec-label { color: var(--carmine); }
+#windbreaker .sec-title { color: var(--dark); }
+#windbreaker .sec-title span { color: var(--carmine); }
 .manga-reader {
   width: 100%; max-width: 420px; position: relative; z-index: 1;
-}
-.panel-counter {
-  text-align: center; font-size: 12px; color: var(--muted);
-  margin-bottom: 12px; font-weight: 700; letter-spacing: 2px;
 }
 .panel-img {
   width: 100%; border-radius: 12px;
@@ -269,7 +265,10 @@ section {
   display: block; margin-bottom: 12px;
   border: 3px solid var(--carmine);
   background: #eee;
+  cursor: pointer;
+  transition: transform 0.2s;
 }
+.panel-img:hover { transform: scale(1.02); }
 .panel-img-placeholder {
   width: 100%; aspect-ratio: 3/4;
   background: linear-gradient(160deg, #f5e0dc, #ecc5be);
@@ -278,26 +277,6 @@ section {
   gap: 8px; color: var(--carmine); font-size: 13px; margin-bottom: 12px;
   opacity: 0.7;
 }
-.panel-comment {
-  background: var(--carmine);
-  color: var(--white);
-  font-family: var(--font-hand); font-size: 18px;
-  padding: 12px 16px; border-radius: 14px;
-  margin-bottom: 12px; line-height: 1.4;
-}
-.manga-nav {
-  display: flex; gap: 10px; justify-content: center; margin-top: 4px;
-}
-.manga-btn {
-  background: var(--carmine);
-  color: var(--white); border: none;
-  font-family: var(--font-body); font-weight: 900; font-size: 20px;
-  width: 48px; height: 48px; border-radius: 50%; cursor: pointer;
-  transition: transform 0.2s, background 0.2s;
-  display: flex; align-items: center; justify-content: center;
-}
-.manga-btn:hover { background: var(--carmine-lt); transform: scale(1.1); }
-.manga-btn:disabled { background: #ccc; cursor: not-allowed; transform: none; }
 
 /* ─── GAMING SECTION ───────────────────────────────── */
 #gaming { background: var(--dark); }
@@ -316,6 +295,7 @@ section {
   border: 1.5px solid rgba(250,128,114,0.2);
   border-radius: 16px; padding: 14px 12px;
   text-align: center; transition: border-color 0.2s, transform 0.2s;
+  cursor: pointer;
 }
 .game-card:hover { border-color: var(--salmon); transform: translateY(-3px); }
 .game-card img, .game-card .img-ph {
@@ -323,6 +303,11 @@ section {
   object-fit: cover; margin: 0 auto 10px;
   border: 2px solid var(--salmon);
   display: block;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.game-card img:hover, .game-card .img-ph:hover {
+  transform: scale(1.05);
 }
 .game-card .img-ph {
   background: var(--carmine-dk);
@@ -335,11 +320,6 @@ section {
 }
 .game-card .g-from {
   font-size: 10px; color: var(--salmon); letter-spacing: 1px; font-weight: 700;
-}
-.game-videos { width: 100%; max-width: 420px; position: relative; z-index: 1; }
-.game-videos-title {
-  font-family: var(--font-hand); font-size: 18px;
-  color: var(--salmon-lt); text-align: center; margin-bottom: 12px;
 }
 
 /* ─── MLP SECTION ──────────────────────────────────── */
@@ -360,6 +340,7 @@ section {
   width: 100%; aspect-ratio: 1; object-fit: cover;
   border-radius: 14px; border: 2px solid rgba(250,128,114,0.35);
   display: block; transition: transform 0.2s;
+  cursor: pointer;
 }
 .mlp-img:hover { transform: scale(1.03); }
 .mlp-img-ph {
@@ -368,13 +349,6 @@ section {
   border-radius: 14px; border: 2px dashed rgba(250,128,114,0.3);
   display: flex; flex-direction: column; align-items: center; justify-content: center;
   gap: 6px; color: var(--salmon); font-size: 12px;
-}
-.mlp-msg {
-  max-width: 420px; width: 100%; position: relative; z-index: 1;
-  background: rgba(250,128,114,0.1); border: 1.5px solid rgba(250,128,114,0.25);
-  border-radius: 16px; padding: 16px 18px;
-  font-family: var(--font-hand); font-size: 19px;
-  color: var(--cream); line-height: 1.5; text-align: center;
 }
 
 /* ─── SOUTH PARK SECTION ───────────────────────────── */
@@ -389,7 +363,10 @@ section {
   box-shadow: 0 0 40px rgba(250,128,114,0.3);
   background: var(--dark);
   display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+  transition: transform 0.2s;
 }
+.sp-img-wrap:hover { transform: scale(1.05); }
 .sp-img-wrap img { width: 100%; height: 100%; object-fit: cover; }
 .sp-img-wrap .img-ph {
   font-size: 60px; color: var(--salmon); opacity: 0.5;
@@ -409,17 +386,6 @@ section {
   border-right: 12px solid transparent;
   border-top: 12px solid var(--carmine-dk);
 }
-.sp-img2 {
-  width: 100%; border-radius: 16px; margin-top: 24px;
-  border: 2px solid rgba(250,128,114,0.25);
-  display: block;
-}
-.sp-img2-ph {
-  width: 100%; aspect-ratio: 16/9; border-radius: 16px; margin-top: 24px;
-  background: rgba(155,29,32,0.15); border: 2px dashed rgba(250,128,114,0.25);
-  display: flex; align-items: center; justify-content: center;
-  color: var(--muted); font-size: 13px;
-}
 
 /* ─── SCREENSHOTS SECTION ──────────────────────────── */
 #screenshots { background: var(--dark); }
@@ -433,6 +399,7 @@ section {
   box-shadow: 0 6px 24px rgba(0,0,0,0.35);
   transform: rotate(var(--rot, -2deg));
   transition: transform 0.2s;
+  cursor: pointer;
 }
 .polaroid:hover { transform: rotate(0deg) scale(1.04); z-index: 5; }
 .polaroid img { width: 100%; aspect-ratio: 1; object-fit: cover; display: block; }
@@ -491,10 +458,6 @@ section {
   margin-bottom: 16px;
 }
 .final-big em { color: var(--salmon-lt); font-style: normal; display: block; }
-.final-note {
-  font-family: var(--font-hand); font-size: 20px;
-  color: var(--salmon-lt); line-height: 1.6; margin-bottom: 28px;
-}
 .heart-anim {
   font-size: 40px;
   animation: heartbeat 1.2s ease-in-out infinite;
@@ -531,7 +494,6 @@ section {
 <body>
 
 <!-- AUDIO (reemplaza src con tu canción) -->
-<!-- CAMBIAR: sube tu canción a GitHub y reemplaza "tu-cancion.mp3" con la ruta -->
 <audio id="bgAudio" loop preload="auto">
   <source src="tu-cancion.mp3" type="audio/mpeg">
 </audio>
@@ -548,12 +510,12 @@ section {
 <!-- Puntos de navegación -->
 <nav id="nav-dots" aria-label="Navegación de secciones">
   <div class="dot active" onclick="goTo(0)" title="Inicio"></div>
-  <div class="dot" onclick="goTo(1)" title="Anime"></div>
-  <div class="dot" onclick="goTo(2)" title="Manga"></div>
+  <div class="dot" onclick="goTo(1)" title="Personajes"></div>
+  <div class="dot" onclick="goTo(2)" title="Wind Breaker"></div>
   <div class="dot" onclick="goTo(3)" title="Gaming"></div>
   <div class="dot" onclick="goTo(4)" title="MLP"></div>
   <div class="dot" onclick="goTo(5)" title="South Park"></div>
-  <div class="dot" onclick="goTo(6)" title="Fotos"></div>
+  <div class="dot" onclick="goTo(6)" title="Momentos"></div>
   <div class="dot" onclick="goTo(7)" title="Sorpresa"></div>
   <div class="dot" onclick="goTo(8)" title="Final"></div>
 </nav>
@@ -567,12 +529,10 @@ section {
     <div class="hero-tag">✦ FELIZ CUMPLEAÑOS ✦</div>
 
     <h1 class="hero-name">
-      HAPPY<br>
-      <!-- CAMBIAR: reemplaza "NOMBRE" con el nombre de ella -->
-      <em>NOMBRE</em>
+      feliz cumpleaños<br>
+      <em>NILAY</em>
     </h1>
 
-    <!-- CAMBIAR: personaliza este mensaje de bienvenida -->
     <p class="hero-sub">te hice algo especial ✨</p>
 
     <button class="hero-btn" onclick="startExperience()">
@@ -583,34 +543,29 @@ section {
 </section>
 
 <!-- ═══════════════════════════════════════════════════════ -->
-<!-- SECCIÓN 2: ANIME & PERSONAJES -->
+<!-- SECCIÓN 2: PERSONAJES -->
 <!-- ═══════════════════════════════════════════════════════ -->
-<section id="anime">
+<section id="personajes">
   <p class="sec-label reveal">✦ tus faves</p>
-  <h2 class="sec-title reveal">ANIME <span>&</span><br>PERSONAJES</h2>
+  <h2 class="sec-title reveal">PERSONAJES</h2>
 
   <div class="tabs reveal">
     <button class="tab-btn active" onclick="showTab('sukuna')">Sukuna</button>
     <button class="tab-btn" onclick="showTab('bakugo')">Bakugo</button>
-    <button class="tab-btn" onclick="showTab('zukotoph')">Zuko &amp; Toph</button>
+    <button class="tab-btn" onclick="showTab('avatar')">Avatar</button>
     <button class="tab-btn" onclick="showTab('xiao')">Xiao</button>
   </div>
 
   <!-- TAB: SUKUNA -->
   <div class="tab-panel active" id="tab-sukuna">
     <div class="char-card">
-      <!-- CAMBIAR: reemplaza src con tu fanart/edit de Sukuna -->
-      <!-- Opción video: cambia <img> por <div class="video-wrap"><iframe src="URL_YOUTUBE_EMBED"></iframe></div> -->
       <div class="char-media-placeholder">
         <span class="icon-ph">👹</span>
         <span>CAMBIAR: fanart o edit de Sukuna</span>
-        <!-- <img class="char-media" src="sukuna-fanart.jpg" alt="Sukuna"> -->
       </div>
       <div class="char-info">
         <p class="char-name">Ryomen Sukuna</p>
         <p class="char-from">JUJUTSU KAISEN</p>
-        <!-- CAMBIAR: tu mensaje gracioso sobre este personaje -->
-        <p class="char-note">"sé que te gusta porque tiene cara de malo y eso te parece atractivo, no me expliques"</p>
       </div>
     </div>
   </div>
@@ -621,35 +576,36 @@ section {
       <div class="char-media-placeholder">
         <span class="icon-ph">💥</span>
         <span>CAMBIAR: fanart o edit de Bakugo</span>
-        <!-- <img class="char-media" src="bakugo-fanart.jpg" alt="Bakugo"> -->
       </div>
       <div class="char-info">
         <p class="char-name">Katsuki Bakugo</p>
         <p class="char-from">MY HERO ACADEMIA</p>
-        <!-- CAMBIAR: tu mensaje sobre Bakugo -->
-        <p class="char-note">"te gustan los que gritan. es un patrón. lo he notado."</p>
       </div>
     </div>
   </div>
 
-  <!-- TAB: ZUKO & TOPH -->
-  <div class="tab-panel" id="tab-zukotoph">
-    <div class="char-card">
-      <!-- CAMBIAR: si tienes edit en video, pon el iframe de YouTube embed -->
-      <div class="video-placeholder">
-        <span style="font-size:32px;">🎬</span>
-        <span>CAMBIAR: embed de tu edit de Zuko/Toph</span>
-        <!--
-        <div class="video-wrap">
-          <iframe src="https://www.youtube.com/embed/TU_ID_AQUI" allowfullscreen></iframe>
+  <!-- TAB: AVATAR -->
+  <div class="tab-panel" id="tab-avatar">
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; max-width: 420px; width: 100%;">
+      <div class="char-card">
+        <div class="char-media-placeholder">
+          <span class="icon-ph">🔥</span>
+          <span>CAMBIAR: edit de Zuko</span>
         </div>
-        -->
+        <div class="char-info">
+          <p class="char-name">Zuko</p>
+          <p class="char-from">AVATAR</p>
+        </div>
       </div>
-      <div class="char-info">
-        <p class="char-name">Zuko & Toph</p>
-        <p class="char-from">AVATAR: THE LAST AIRBENDER</p>
-        <!-- CAMBIAR: tu mensaje sobre este duo -->
-        <p class="char-note">"mira este edit que encontré y pensé en ti instantáneamente"</p>
+      <div class="char-card">
+        <div class="char-media-placeholder">
+          <span class="icon-ph">⛰️</span>
+          <span>CAMBIAR: edit de Toph</span>
+        </div>
+        <div class="char-info">
+          <p class="char-name">Toph</p>
+          <p class="char-from">AVATAR</p>
+        </div>
       </div>
     </div>
   </div>
@@ -660,42 +616,27 @@ section {
       <div class="char-media-placeholder">
         <span class="icon-ph">🌿</span>
         <span>CAMBIAR: fanart de Xiao</span>
-        <!-- <img class="char-media" src="xiao-fanart.jpg" alt="Xiao"> -->
       </div>
       <div class="char-info">
         <p class="char-name">Xiao</p>
         <p class="char-from">GENSHIN IMPACT</p>
-        <!-- CAMBIAR: tu mensaje sobre Xiao -->
-        <p class="char-note">"el único personaje calladito que quieres y honestamente lo entiendo"</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ═══════════════════════════════════════════════════════ -->
-<!-- SECCIÓN 3: MANGA -->
+<!-- SECCIÓN 3: WIND BREAKER -->
 <!-- ═══════════════════════════════════════════════════════ -->
-<section id="manga">
-  <p class="sec-label reveal">✦ tu ship</p>
-  <h2 class="sec-title reveal">MOMIJI <span>&</span><br>SAKURA</h2>
+<section id="windbreaker">
+  <p class="sec-label reveal">✦ manga</p>
+  <h2 class="sec-title reveal">WIND<br><span>BREAKER</span></h2>
 
   <div class="manga-reader reveal">
-    <p class="panel-counter" id="panelCounter">panel 1 / 4</p>
-
-    <!-- Los paneles se cargan con JS abajo -->
     <img id="mangaPanel" class="panel-img" src="" alt="Panel de manga" style="display:none;">
     <div id="mangaPanelPh" class="panel-img-placeholder">
       <span style="font-size:36px;opacity:0.4;">📖</span>
-      <span>CAMBIAR: agrega tus paneles abajo en el array</span>
-    </div>
-
-    <div class="panel-comment" id="panelComment">
-      <!-- comentario del panel actual -->
-    </div>
-
-    <div class="manga-nav">
-      <button class="manga-btn" id="prevBtn" onclick="changePanel(-1)" disabled>←</button>
-      <button class="manga-btn" id="nextBtn" onclick="changePanel(1)">→</button>
+      <span>CAMBIAR: agrega tu panel aquí en el JS</span>
     </div>
   </div>
 </section>
@@ -704,54 +645,19 @@ section {
 <!-- SECCIÓN 4: GAMING -->
 <!-- ═══════════════════════════════════════════════════════ -->
 <section id="gaming">
-  <p class="sec-label reveal">✦ modo gamer</p>
-  <h2 class="sec-title reveal">GAMING<br><span>ZONE</span></h2>
+  <p class="sec-label reveal">✦ juegos</p>
+  <h2 class="sec-title reveal">GAMING</h2>
 
   <div class="game-grid reveal">
-    <!-- CAMBIAR: reemplaza las imágenes de los personajes -->
     <div class="game-card">
       <div class="img-ph">⚔️</div>
-      <!-- <img src="marcel.jpg" alt="Marcel"> -->
       <p class="g-name">Marcel</p>
       <p class="g-from">MOBILE LEGENDS</p>
     </div>
     <div class="game-card">
       <div class="img-ph">🥊</div>
-      <!-- <img src="edgar.jpg" alt="Edgar"> -->
       <p class="g-name">Edgar</p>
       <p class="g-from">BRAWL STARS</p>
-    </div>
-  </div>
-
-  <div class="game-videos reveal">
-    <p class="game-videos-title">🎬 edits que te mando</p>
-
-    <!-- VIDEO 1: Draco -->
-    <div class="video-placeholder">
-      <span style="font-size:28px;">🐉</span>
-      <span>CAMBIAR: video de Draco (Brawl Stars)</span>
-    </div>
-    <!--
-    CAMBIAR: cuando tengas el link de YouTube, reemplaza el bloque de arriba con:
-    <div class="video-wrap">
-      <iframe src="https://www.youtube.com/embed/TU_ID_DRACO" allowfullscreen></iframe>
-    </div>
-    -->
-
-    <!-- VIDEO 2: Lumi -->
-    <div class="video-placeholder">
-      <span style="font-size:28px;">✨</span>
-      <span>CAMBIAR: video de Lumi (Brawl Stars)</span>
-    </div>
-    <!--
-    <div class="video-wrap">
-      <iframe src="https://www.youtube.com/embed/TU_ID_LUMI" allowfullscreen></iframe>
-    </div>
-    -->
-
-    <!-- CAMBIAR: tu mensaje sobre gaming -->
-    <div class="char-note" style="margin-top:8px;border-left-color:var(--salmon-dk);">
-      "no sé cómo juegas todo esto a la vez pero claramente tienes más vida que yo 💀"
     </div>
   </div>
 </section>
@@ -761,34 +667,13 @@ section {
 <!-- ═══════════════════════════════════════════════════════ -->
 <section id="mlp">
   <p class="sec-label reveal" style="color:var(--salmon);">✦ my little pony</p>
-  <h2 class="sec-title reveal">🦄 <span>PONY</span><br>UNIVERSE</h2>
+  <h2 class="sec-title reveal">🦄 <span>PONY</span></h2>
 
   <div class="mlp-grid reveal">
-    <!-- CAMBIAR: reemplaza con tus fanarts de MLP -->
     <div class="mlp-img-ph"><span style="font-size:32px;">🦄</span><span>fanart 1</span></div>
     <div class="mlp-img-ph"><span style="font-size:32px;">💜</span><span>fanart 2</span></div>
     <div class="mlp-img-ph"><span style="font-size:32px;">🌈</span><span>fanart 3</span></div>
     <div class="mlp-img-ph"><span style="font-size:32px;">✨</span><span>fanart 4</span></div>
-    <!--
-    CAMBIAR: cuando subas las imágenes, reemplaza cada div por:
-    <img class="mlp-img" src="mlp1.jpg" alt="MLP fanart">
-    -->
-  </div>
-
-  <!-- MLP video -->
-  <div class="video-placeholder reveal" style="max-width:420px;width:100%;">
-    <span style="font-size:28px;">🎬</span>
-    <span>CAMBIAR: video/edit de MLP</span>
-  </div>
-  <!--
-  <div class="video-wrap reveal" style="max-width:420px;width:100%;">
-    <iframe src="https://www.youtube.com/embed/TU_ID_MLP" allowfullscreen></iframe>
-  </div>
-  -->
-
-  <!-- CAMBIAR: tu mensaje sobre MLP -->
-  <div class="mlp-msg reveal">
-    "sigo sin entender del todo el lore pero ya sé los nombres de todos los ships y es tu culpa 🫡"
   </div>
 </section>
 
@@ -800,51 +685,31 @@ section {
   <h2 class="sec-title reveal">SOUTH<br><span>PARK</span></h2>
 
   <div class="sp-inner reveal">
-    <!-- Mensaje tuyo antes de la imagen (como burbuja) -->
-    <!-- CAMBIAR: escribe tu mensaje gracioso sobre Craig -->
     <div class="sp-quote">
-      "okay pero ¿por qué Craig? necesito una explicación. una presentación. un TED talk."
+      "la verdad te veo más como Cartman"
     </div>
 
-    <!-- CAMBIAR: imagen de Craig -->
     <div class="sp-img-wrap">
       <span class="img-ph">🏔️</span>
-      <!-- <img src="craig.jpg" alt="Craig South Park"> -->
     </div>
-
-    <!-- CAMBIAR: otra imagen o fanart opcional -->
-    <div class="sp-img2-ph">
-      <span>CAMBIAR: otra imagen opcional</span>
-    </div>
-    <!-- <img class="sp-img2" src="craig-fanart.jpg" alt="Craig fanart"> -->
   </div>
 </section>
 
 <!-- ═══════════════════════════════════════════════════════ -->
-<!-- SECCIÓN 7: SCREENSHOTS GRACIOSOS -->
+<!-- SECCIÓN 7: MOMENTOS CHISTOSOS -->
 <!-- ═══════════════════════════════════════════════════════ -->
 <section id="screenshots">
-  <p class="sec-label reveal">✦ evidencia</p>
-  <h2 class="sec-title reveal">NUESTROS<br><span>MOMENTOS</span></h2>
+  <p class="sec-label reveal">✦ momentos</p>
+  <h2 class="sec-title reveal">CHISTOSOS<br><span>DEL MES</span></h2>
 
   <div class="screenshots-grid reveal" id="screenshotsGrid">
-    <!-- Los polaroids se generan con JS abajo -->
-    <!-- CAMBIAR: agrega tus capturas en el array screenshotsData abajo -->
     <div class="polaroid" style="--rot:-3deg;">
       <div class="img-ph">📱</div>
-      <p class="caption">CAMBIAR: agrega capturas abajo en el JS</p>
+      <p class="caption">CAMBIAR: captura 1</p>
     </div>
     <div class="polaroid" style="--rot:2deg;">
       <div class="img-ph">😭</div>
-      <p class="caption">en el array screenshotsData</p>
-    </div>
-    <div class="polaroid" style="--rot:-1deg;">
-      <div class="img-ph">💀</div>
-      <p class="caption">hay instrucciones en el código</p>
-    </div>
-    <div class="polaroid" style="--rot:3deg;">
-      <div class="img-ph">🫡</div>
-      <p class="caption">no te preocupes es fácil</p>
+      <p class="caption">CAMBIAR: captura 2</p>
     </div>
   </div>
 </section>
@@ -858,7 +723,6 @@ section {
 
   <div class="surprise-inner">
     <div class="gift-box reveal" id="giftBox" onclick="revealSurprise()">
-      <!-- Regalo SVG animado -->
       <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
         <rect x="15" y="50" width="90" height="60" rx="6" fill="#9B1D20"/>
         <rect x="10" y="38" width="100" height="20" rx="4" fill="#C0392B"/>
@@ -872,41 +736,15 @@ section {
       </svg>
     </div>
 
-    <!-- CAMBIAR: texto debajo del regalo antes de abrir -->
     <p class="reveal" style="font-family:var(--font-hand);font-size:18px;color:var(--muted);margin-top:-8px;">
       toca para abrir ✨
     </p>
 
     <div id="surprise-content">
-      <!-- CAMBIAR: texto antes del video sorpresa -->
-      <p class="surprise-msg">
-        "hice esto con mucho amor, espero que te guste 🥺"
-      </p>
-
-      <!-- CAMBIAR: reemplaza con tu video sorpresa -->
-      <!-- Opción 1 — video subido a YouTube sin listar: -->
-      <!--
-      <div class="video-wrap" style="margin-bottom:16px;">
-        <iframe src="https://www.youtube.com/embed/TU_ID_SORPRESA" allowfullscreen></iframe>
-      </div>
-      -->
-      <!-- Opción 2 — archivo de video en el repo: -->
-      <!--
-      <div class="video-wrap" style="margin-bottom:16px;">
-        <video controls playsinline>
-          <source src="sorpresa.mp4" type="video/mp4">
-        </video>
-      </div>
-      -->
       <div class="video-placeholder" style="max-width:100%;">
         <span style="font-size:36px;">🎬</span>
         <span>CAMBIAR: tu video especial aquí</span>
       </div>
-
-      <!-- CAMBIAR: mensaje final de la sorpresa -->
-      <p class="surprise-msg" style="margin-top:20px;">
-        "feliz cumpleaños, te quiero muchísimo 🧡"
-      </p>
     </div>
   </div>
 </section>
@@ -917,17 +755,7 @@ section {
 <section id="final">
   <div class="final-inner">
     <div class="heart-anim reveal">🧡</div>
-    <h2 class="final-big reveal">
-      FELIZ
-      <!-- CAMBIAR: el nombre de ella -->
-      <em>CUMPLEAÑOS</em>
-    </h2>
-    <!-- CAMBIAR: tu mensaje final -->
-    <p class="final-note reveal">
-      "gracias por existir y ser la persona más especial.<br>
-      espero que este año sea increíble para ti. 🎂"
-    </p>
-    <p class="reveal" style="font-family:var(--font-hand);font-size:15px;color:var(--salmon-lt);opacity:0.7;">
+    <p class="reveal" style="font-family:var(--font-hand);font-size:15px;color:var(--salmon-lt);opacity:0.9;">
       con mucho cariño ✦
     </p>
   </div>
@@ -942,26 +770,15 @@ section {
    DATOS QUE DEBES CAMBIAR
    ───────────────────────────────────────────────────────── */
 
-// MANGA: agrega aquí tus paneles
-// src: ruta de la imagen en tu repo (ej: "manga/panel1.jpg")
-// comment: tu comentario gracioso sobre ese panel
+// WIND BREAKER: agrega aquí tu panel
 const mangaPanels = [
-  { src: "", comment: "CAMBIAR: pon aquí el comentario del panel 1" },
-  { src: "", comment: "CAMBIAR: comentario del panel 2" },
-  { src: "", comment: "CAMBIAR: comentario del panel 3" },
-  { src: "", comment: "CAMBIAR: comentario del panel 4" },
+  { src: "", comment: "" },
 ];
 
-// SCREENSHOTS: agrega tus capturas de pantalla
-// src: ruta de la imagen (ej: "screenshots/cap1.jpg")
-// caption: pie de foto gracioso
+// SCREENSHOTS: agrega tus capturas (solo 2)
 const screenshotsData = [
   { src: "", caption: "CAMBIAR: pie de foto 1", rot: -3 },
   { src: "", caption: "CAMBIAR: pie de foto 2", rot:  2 },
-  { src: "", caption: "CAMBIAR: pie de foto 3", rot: -1 },
-  { src: "", caption: "CAMBIAR: pie de foto 4", rot:  3 },
-  { src: "", caption: "CAMBIAR: pie de foto 5", rot: -2 },
-  { src: "", caption: "CAMBIAR: pie de foto 6", rot:  1 },
 ];
 
 /* ─────────────────────────────────────────────────────────
@@ -994,7 +811,7 @@ function startExperience() {
   document.getElementById('audio-bar').classList.remove('paused');
   launchConfetti();
   setTimeout(() => {
-    document.getElementById('anime').scrollIntoView({ behavior: 'smooth' });
+    document.getElementById('personajes').scrollIntoView({ behavior: 'smooth' });
   }, 600);
 }
 
@@ -1057,7 +874,7 @@ function launchConfetti() {
 })();
 
 /* ─────────────────────────────────────────────────────────
-   TABS DE ANIME
+   TABS DE PERSONAJES
    ───────────────────────────────────────────────────────── */
 function showTab(id) {
   document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
@@ -1067,42 +884,13 @@ function showTab(id) {
 }
 
 /* ─────────────────────────────────────────────────────────
-   MANGA READER
+   WIND BREAKER READER
    ───────────────────────────────────────────────────────── */
-let currentPanel = 0;
-
 function initManga() {
   if (!mangaPanels[0].src) return;
   document.getElementById('mangaPanelPh').style.display = 'none';
   document.getElementById('mangaPanel').style.display = 'block';
-  loadPanel(0);
-}
-
-function loadPanel(idx) {
-  const img = document.getElementById('mangaPanel');
-  const ph = document.getElementById('mangaPanelPh');
-  const comment = document.getElementById('panelComment');
-  const counter = document.getElementById('panelCounter');
-  const panel = mangaPanels[idx];
-  counter.textContent = `panel ${idx + 1} / ${mangaPanels.length}`;
-  comment.textContent = panel.comment;
-  if (panel.src) {
-    img.src = panel.src;
-    img.style.display = 'block';
-    ph.style.display = 'none';
-  } else {
-    img.style.display = 'none';
-    ph.style.display = 'flex';
-  }
-  document.getElementById('prevBtn').disabled = idx === 0;
-  document.getElementById('nextBtn').disabled = idx === mangaPanels.length - 1;
-}
-
-function changePanel(dir) {
-  const next = currentPanel + dir;
-  if (next < 0 || next >= mangaPanels.length) return;
-  currentPanel = next;
-  loadPanel(currentPanel);
+  document.getElementById('mangaPanel').src = mangaPanels[0].src;
 }
 
 /* ─────────────────────────────────────────────────────────
@@ -1143,7 +931,7 @@ function revealSurprise() {
 /* ─────────────────────────────────────────────────────────
    SCROLL REVEAL & NAV DOTS
    ───────────────────────────────────────────────────────── */
-const sections = ['hero','anime','manga','gaming','mlp','southpark','screenshots','surprise','final'];
+const sections = ['hero','personajes','windbreaker','gaming','mlp','southpark','screenshots','surprise','final'];
 const dots = document.querySelectorAll('.dot');
 
 const sectionObserver = new IntersectionObserver((entries) => {
