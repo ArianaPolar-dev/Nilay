@@ -159,6 +159,8 @@ section {
   text-shadow: 0 0 40px rgba(250,128,114,0.4);
 }
 
+/* ── CAMBIAR AQUÍ: pon el nombre de ella en .hero-name em ── */
+
 .hero-sub {
   font-family: var(--font-hand);
   font-size: 22px; color: var(--salmon-lt);
@@ -180,8 +182,8 @@ section {
 .hero-btn:hover { transform: scale(1.05); box-shadow: 0 8px 32px rgba(250,128,114,0.6); }
 .confetti-burst { position: absolute; inset: 0; pointer-events: none; z-index: 2; }
 
-/* ─── PERSONAJES SECTION ────────────────────────────── */
-#personajes { background: var(--dark2); }
+/* ─── ANIME SECTION ────────────────────────────────── */
+#anime { background: var(--dark2); }
 .tabs {
   display: flex; gap: 8px; flex-wrap: wrap; justify-content: center;
   margin-bottom: 24px; position: relative; z-index: 1;
@@ -205,10 +207,7 @@ section {
   border: 1.5px solid rgba(250,128,114,0.25);
   border-radius: 20px; overflow: hidden;
   position: relative;
-  cursor: pointer;
-  transition: transform 0.2s;
 }
-.char-card:hover { transform: scale(1.03); }
 .char-media {
   width: 100%; aspect-ratio: 4/3; object-fit: cover;
   display: block; background: var(--dark);
@@ -225,17 +224,21 @@ section {
   font-family: var(--font-display); font-size: 26px;
   color: var(--salmon); margin-bottom: 4px;
 }
-.char-from { font-size: 11px; color: var(--muted); letter-spacing: 2px; }
+.char-from { font-size: 11px; color: var(--muted); letter-spacing: 2px; margin-bottom: 10px; }
+.char-note {
+  font-family: var(--font-hand); font-size: 17px;
+  color: var(--cream); line-height: 1.5;
+  background: rgba(250,128,114,0.08);
+  padding: 10px 14px; border-radius: 12px;
+  border-left: 3px solid var(--salmon);
+}
 
 /* ─── VIDEO EMBED ───────────────────────────────────── */
 .video-wrap {
   width: 100%; aspect-ratio: 16/9; border-radius: 14px;
   overflow: hidden; margin-bottom: 14px;
   border: 1.5px solid rgba(250,128,114,0.2);
-  cursor: pointer;
-  transition: transform 0.2s;
 }
-.video-wrap:hover { transform: scale(1.02); }
 .video-wrap iframe, .video-wrap video {
   width: 100%; height: 100%; border: none; display: block;
 }
@@ -246,18 +249,19 @@ section {
   gap: 8px; color: var(--muted); font-size: 13px;
   border-radius: 14px; border: 1.5px dashed rgba(250,128,114,0.3);
   margin-bottom: 14px;
-  cursor: pointer;
-  transition: transform 0.2s;
 }
-.video-placeholder:hover { transform: scale(1.02); }
 
-/* ─── WIND BREAKER SECTION ────────────────────────────── */
-#windbreaker { background: var(--cream); color: var(--dark); }
-#windbreaker .sec-label { color: var(--carmine); }
-#windbreaker .sec-title { color: var(--dark); }
-#windbreaker .sec-title span { color: var(--carmine); }
+/* ─── MANGA SECTION ────────────────────────────────── */
+#manga { background: var(--cream); color: var(--dark); }
+#manga .sec-label { color: var(--carmine); }
+#manga .sec-title { color: var(--dark); }
+#manga .sec-title span { color: var(--carmine); }
 .manga-reader {
   width: 100%; max-width: 420px; position: relative; z-index: 1;
+}
+.panel-counter {
+  text-align: center; font-size: 12px; color: var(--muted);
+  margin-bottom: 12px; font-weight: 700; letter-spacing: 2px;
 }
 .panel-img {
   width: 100%; border-radius: 12px;
@@ -265,10 +269,7 @@ section {
   display: block; margin-bottom: 12px;
   border: 3px solid var(--carmine);
   background: #eee;
-  cursor: pointer;
-  transition: transform 0.2s;
 }
-.panel-img:hover { transform: scale(1.02); }
 .panel-img-placeholder {
   width: 100%; aspect-ratio: 3/4;
   background: linear-gradient(160deg, #f5e0dc, #ecc5be);
@@ -277,6 +278,26 @@ section {
   gap: 8px; color: var(--carmine); font-size: 13px; margin-bottom: 12px;
   opacity: 0.7;
 }
+.panel-comment {
+  background: var(--carmine);
+  color: var(--white);
+  font-family: var(--font-hand); font-size: 18px;
+  padding: 12px 16px; border-radius: 14px;
+  margin-bottom: 12px; line-height: 1.4;
+}
+.manga-nav {
+  display: flex; gap: 10px; justify-content: center; margin-top: 4px;
+}
+.manga-btn {
+  background: var(--carmine);
+  color: var(--white); border: none;
+  font-family: var(--font-body); font-weight: 900; font-size: 20px;
+  width: 48px; height: 48px; border-radius: 50%; cursor: pointer;
+  transition: transform 0.2s, background 0.2s;
+  display: flex; align-items: center; justify-content: center;
+}
+.manga-btn:hover { background: var(--carmine-lt); transform: scale(1.1); }
+.manga-btn:disabled { background: #ccc; cursor: not-allowed; transform: none; }
 
 /* ─── GAMING SECTION ───────────────────────────────── */
 #gaming { background: var(--dark); }
@@ -295,7 +316,6 @@ section {
   border: 1.5px solid rgba(250,128,114,0.2);
   border-radius: 16px; padding: 14px 12px;
   text-align: center; transition: border-color 0.2s, transform 0.2s;
-  cursor: pointer;
 }
 .game-card:hover { border-color: var(--salmon); transform: translateY(-3px); }
 .game-card img, .game-card .img-ph {
@@ -303,11 +323,6 @@ section {
   object-fit: cover; margin: 0 auto 10px;
   border: 2px solid var(--salmon);
   display: block;
-  cursor: pointer;
-  transition: transform 0.2s;
-}
-.game-card img:hover, .game-card .img-ph:hover {
-  transform: scale(1.05);
 }
 .game-card .img-ph {
   background: var(--carmine-dk);
@@ -320,6 +335,11 @@ section {
 }
 .game-card .g-from {
   font-size: 10px; color: var(--salmon); letter-spacing: 1px; font-weight: 700;
+}
+.game-videos { width: 100%; max-width: 420px; position: relative; z-index: 1; }
+.game-videos-title {
+  font-family: var(--font-hand); font-size: 18px;
+  color: var(--salmon-lt); text-align: center; margin-bottom: 12px;
 }
 
 /* ─── MLP SECTION ──────────────────────────────────── */
@@ -340,7 +360,6 @@ section {
   width: 100%; aspect-ratio: 1; object-fit: cover;
   border-radius: 14px; border: 2px solid rgba(250,128,114,0.35);
   display: block; transition: transform 0.2s;
-  cursor: pointer;
 }
 .mlp-img:hover { transform: scale(1.03); }
 .mlp-img-ph {
@@ -349,6 +368,13 @@ section {
   border-radius: 14px; border: 2px dashed rgba(250,128,114,0.3);
   display: flex; flex-direction: column; align-items: center; justify-content: center;
   gap: 6px; color: var(--salmon); font-size: 12px;
+}
+.mlp-msg {
+  max-width: 420px; width: 100%; position: relative; z-index: 1;
+  background: rgba(250,128,114,0.1); border: 1.5px solid rgba(250,128,114,0.25);
+  border-radius: 16px; padding: 16px 18px;
+  font-family: var(--font-hand); font-size: 19px;
+  color: var(--cream); line-height: 1.5; text-align: center;
 }
 
 /* ─── SOUTH PARK SECTION ───────────────────────────── */
@@ -363,10 +389,7 @@ section {
   box-shadow: 0 0 40px rgba(250,128,114,0.3);
   background: var(--dark);
   display: flex; align-items: center; justify-content: center;
-  cursor: pointer;
-  transition: transform 0.2s;
 }
-.sp-img-wrap:hover { transform: scale(1.05); }
 .sp-img-wrap img { width: 100%; height: 100%; object-fit: cover; }
 .sp-img-wrap .img-ph {
   font-size: 60px; color: var(--salmon); opacity: 0.5;
@@ -386,6 +409,17 @@ section {
   border-right: 12px solid transparent;
   border-top: 12px solid var(--carmine-dk);
 }
+.sp-img2 {
+  width: 100%; border-radius: 16px; margin-top: 24px;
+  border: 2px solid rgba(250,128,114,0.25);
+  display: block;
+}
+.sp-img2-ph {
+  width: 100%; aspect-ratio: 16/9; border-radius: 16px; margin-top: 24px;
+  background: rgba(155,29,32,0.15); border: 2px dashed rgba(250,128,114,0.25);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--muted); font-size: 13px;
+}
 
 /* ─── SCREENSHOTS SECTION ──────────────────────────── */
 #screenshots { background: var(--dark); }
@@ -399,7 +433,6 @@ section {
   box-shadow: 0 6px 24px rgba(0,0,0,0.35);
   transform: rotate(var(--rot, -2deg));
   transition: transform 0.2s;
-  cursor: pointer;
 }
 .polaroid:hover { transform: rotate(0deg) scale(1.04); z-index: 5; }
 .polaroid img { width: 100%; aspect-ratio: 1; object-fit: cover; display: block; }
@@ -458,6 +491,10 @@ section {
   margin-bottom: 16px;
 }
 .final-big em { color: var(--salmon-lt); font-style: normal; display: block; }
+.final-note {
+  font-family: var(--font-hand); font-size: 20px;
+  color: var(--salmon-lt); line-height: 1.6; margin-bottom: 28px;
+}
 .heart-anim {
   font-size: 40px;
   animation: heartbeat 1.2s ease-in-out infinite;
@@ -484,6 +521,25 @@ section {
 ::-webkit-scrollbar-track { background: var(--dark); }
 ::-webkit-scrollbar-thumb { background: var(--carmine); border-radius: 2px; }
 
+/* ─── LIGHTBOX ──────────────────────────────────────── */
+#lightbox {
+  display: none; position: fixed; inset: 0; z-index: 9999;
+  background: rgba(0,0,0,0.92);
+  align-items: center; justify-content: center;
+  cursor: zoom-out;
+}
+#lightbox.open { display: flex; animation: fadeUp 0.2s ease both; }
+#lightbox img, #lightbox video {
+  max-width: 95vw; max-height: 92vh;
+  border-radius: 10px; object-fit: contain;
+  box-shadow: 0 8px 60px rgba(0,0,0,0.7);
+}
+#lightbox-close {
+  position: absolute; top: 16px; right: 20px;
+  font-size: 32px; color: var(--salmon-lt); cursor: pointer; z-index: 10000;
+  line-height: 1;
+}
+
 /* ─── MOBILE TWEAKS ─────────────────────────────────── */
 @media (max-width: 380px) {
   .game-grid, .mlp-grid, .screenshots-grid { grid-template-columns: 1fr; }
@@ -494,6 +550,7 @@ section {
 <body>
 
 <!-- AUDIO (reemplaza src con tu canción) -->
+<!-- CAMBIAR: sube tu canción a GitHub y reemplaza "tu-cancion.mp3" con la ruta -->
 <audio id="bgAudio" loop preload="auto">
   <source src="tu-cancion.mp3" type="audio/mpeg">
 </audio>
@@ -510,12 +567,12 @@ section {
 <!-- Puntos de navegación -->
 <nav id="nav-dots" aria-label="Navegación de secciones">
   <div class="dot active" onclick="goTo(0)" title="Inicio"></div>
-  <div class="dot" onclick="goTo(1)" title="Personajes"></div>
-  <div class="dot" onclick="goTo(2)" title="Wind Breaker"></div>
+  <div class="dot" onclick="goTo(1)" title="Anime"></div>
+  <div class="dot" onclick="goTo(2)" title="Manga"></div>
   <div class="dot" onclick="goTo(3)" title="Gaming"></div>
   <div class="dot" onclick="goTo(4)" title="MLP"></div>
   <div class="dot" onclick="goTo(5)" title="South Park"></div>
-  <div class="dot" onclick="goTo(6)" title="Momentos"></div>
+  <div class="dot" onclick="goTo(6)" title="Fotos"></div>
   <div class="dot" onclick="goTo(7)" title="Sorpresa"></div>
   <div class="dot" onclick="goTo(8)" title="Final"></div>
 </nav>
@@ -529,8 +586,8 @@ section {
     <div class="hero-tag">✦ FELIZ CUMPLEAÑOS ✦</div>
 
     <h1 class="hero-name">
-      feliz cumpleaños<br>
-      <em>NILAY</em>
+      <span style="font-size:clamp(14px,4vw,22px);font-family:var(--font-hand);color:var(--salmon-lt);font-style:normal;display:block;-webkit-text-stroke:0;text-shadow:none;letter-spacing:2px;">feliz cumpleaños</span>
+      <em>Nilay</em>
     </h1>
 
     <p class="hero-sub">te hice algo especial ✨</p>
@@ -543,16 +600,17 @@ section {
 </section>
 
 <!-- ═══════════════════════════════════════════════════════ -->
-<!-- SECCIÓN 2: PERSONAJES -->
+<!-- SECCIÓN 2: ANIME & PERSONAJES -->
 <!-- ═══════════════════════════════════════════════════════ -->
-<section id="personajes">
+<section id="anime">
   <p class="sec-label reveal">✦ tus faves</p>
   <h2 class="sec-title reveal">PERSONAJES</h2>
 
   <div class="tabs reveal">
     <button class="tab-btn active" onclick="showTab('sukuna')">Sukuna</button>
     <button class="tab-btn" onclick="showTab('bakugo')">Bakugo</button>
-    <button class="tab-btn" onclick="showTab('avatar')">Avatar</button>
+    <button class="tab-btn" onclick="showTab('zuko')">Zuko</button>
+    <button class="tab-btn" onclick="showTab('toph')">Toph</button>
     <button class="tab-btn" onclick="showTab('xiao')">Xiao</button>
   </div>
 
@@ -584,28 +642,32 @@ section {
     </div>
   </div>
 
-  <!-- TAB: AVATAR -->
-  <div class="tab-panel" id="tab-avatar">
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; max-width: 420px; width: 100%;">
-      <div class="char-card">
-        <div class="char-media-placeholder">
-          <span class="icon-ph">🔥</span>
-          <span>CAMBIAR: edit de Zuko</span>
-        </div>
-        <div class="char-info">
-          <p class="char-name">Zuko</p>
-          <p class="char-from">AVATAR</p>
-        </div>
+  <!-- TAB: ZUKO (Avatar) -->
+  <div class="tab-panel" id="tab-zuko">
+    <div class="char-card">
+      <p class="char-from" style="text-align:center;padding:10px 0 0;font-size:10px;letter-spacing:2px;color:var(--salmon);">✦ AVATAR</p>
+      <div class="video-placeholder">
+        <span style="font-size:32px;">🔥</span>
+        <span>CAMBIAR: edit de Zuko</span>
       </div>
-      <div class="char-card">
-        <div class="char-media-placeholder">
-          <span class="icon-ph">⛰️</span>
-          <span>CAMBIAR: edit de Toph</span>
-        </div>
-        <div class="char-info">
-          <p class="char-name">Toph</p>
-          <p class="char-from">AVATAR</p>
-        </div>
+      <div class="char-info">
+        <p class="char-name">Zuko</p>
+        <p class="char-from">AVATAR: THE LAST AIRBENDER</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- TAB: TOPH (Avatar) -->
+  <div class="tab-panel" id="tab-toph">
+    <div class="char-card">
+      <p class="char-from" style="text-align:center;padding:10px 0 0;font-size:10px;letter-spacing:2px;color:var(--salmon);">✦ AVATAR</p>
+      <div class="video-placeholder">
+        <span style="font-size:32px;">🪨</span>
+        <span>CAMBIAR: edit de Toph</span>
+      </div>
+      <div class="char-info">
+        <p class="char-name">Toph</p>
+        <p class="char-from">AVATAR: THE LAST AIRBENDER</p>
       </div>
     </div>
   </div>
@@ -626,17 +688,18 @@ section {
 </section>
 
 <!-- ═══════════════════════════════════════════════════════ -->
-<!-- SECCIÓN 3: WIND BREAKER -->
+<!-- SECCIÓN 3: MANGA -->
 <!-- ═══════════════════════════════════════════════════════ -->
-<section id="windbreaker">
-  <p class="sec-label reveal">✦ manga</p>
-  <h2 class="sec-title reveal">WIND<br><span>BREAKER</span></h2>
+<section id="manga">
+  <p class="sec-label reveal">✦ wind breaker</p>
+  <h2 class="sec-title reveal">WIND <span>BREAKER</span></h2>
 
   <div class="manga-reader reveal">
+    <!-- Un solo panel -->
     <img id="mangaPanel" class="panel-img" src="" alt="Panel de manga" style="display:none;">
     <div id="mangaPanelPh" class="panel-img-placeholder">
       <span style="font-size:36px;opacity:0.4;">📖</span>
-      <span>CAMBIAR: agrega tu panel aquí en el JS</span>
+      <span>CAMBIAR: agrega el panel aquí</span>
     </div>
   </div>
 </section>
@@ -646,16 +709,18 @@ section {
 <!-- ═══════════════════════════════════════════════════════ -->
 <section id="gaming">
   <p class="sec-label reveal">✦ juegos</p>
-  <h2 class="sec-title reveal">GAMING</h2>
+  <h2 class="sec-title reveal"><span>JUEGOS</span></h2>
 
   <div class="game-grid reveal">
     <div class="game-card">
       <div class="img-ph">⚔️</div>
+      <!-- <img src="marcel.jpg" alt="Marcel"> -->
       <p class="g-name">Marcel</p>
       <p class="g-from">MOBILE LEGENDS</p>
     </div>
     <div class="game-card">
       <div class="img-ph">🥊</div>
+      <!-- <img src="edgar.jpg" alt="Edgar"> -->
       <p class="g-name">Edgar</p>
       <p class="g-from">BRAWL STARS</p>
     </div>
@@ -667,13 +732,18 @@ section {
 <!-- ═══════════════════════════════════════════════════════ -->
 <section id="mlp">
   <p class="sec-label reveal" style="color:var(--salmon);">✦ my little pony</p>
-  <h2 class="sec-title reveal">🦄 <span>PONY</span></h2>
+  <h2 class="sec-title reveal">🦄 MY LITTLE <span>PONY</span></h2>
 
   <div class="mlp-grid reveal">
     <div class="mlp-img-ph"><span style="font-size:32px;">🦄</span><span>fanart 1</span></div>
     <div class="mlp-img-ph"><span style="font-size:32px;">💜</span><span>fanart 2</span></div>
     <div class="mlp-img-ph"><span style="font-size:32px;">🌈</span><span>fanart 3</span></div>
     <div class="mlp-img-ph"><span style="font-size:32px;">✨</span><span>fanart 4</span></div>
+  </div>
+
+  <div class="video-placeholder reveal" style="max-width:420px;width:100%;">
+    <span style="font-size:28px;">🎬</span>
+    <span>CAMBIAR: video/edit de MLP</span>
   </div>
 </section>
 
@@ -685,31 +755,39 @@ section {
   <h2 class="sec-title reveal">SOUTH<br><span>PARK</span></h2>
 
   <div class="sp-inner reveal">
+    <!-- Mensaje tuyo antes de la imagen (como burbuja) -->
+    <!-- CAMBIAR: escribe tu mensaje gracioso sobre Craig -->
     <div class="sp-quote">
       "la verdad te veo más como Cartman"
     </div>
 
+    <!-- CAMBIAR: imagen de Craig -->
     <div class="sp-img-wrap">
       <span class="img-ph">🏔️</span>
+      <!-- <img src="craig.jpg" alt="Craig South Park"> -->
     </div>
+
+    <!-- CAMBIAR: otra imagen o fanart opcional -->
+    <div class="sp-img2-ph">
+      <span>CAMBIAR: otra imagen opcional</span>
+    </div>
+    <!-- <img class="sp-img2" src="craig-fanart.jpg" alt="Craig fanart"> -->
   </div>
 </section>
 
 <!-- ═══════════════════════════════════════════════════════ -->
-<!-- SECCIÓN 7: MOMENTOS CHISTOSOS -->
+<!-- SECCIÓN 7: SCREENSHOTS GRACIOSOS -->
 <!-- ═══════════════════════════════════════════════════════ -->
 <section id="screenshots">
-  <p class="sec-label reveal">✦ momentos</p>
-  <h2 class="sec-title reveal">CHISTOSOS<br><span>DEL MES</span></h2>
+  <p class="sec-label reveal">✦ evidencia</p>
+  <h2 class="sec-title reveal">MOMENTO CHISTOSO<br><span>DEL MES</span></h2>
 
   <div class="screenshots-grid reveal" id="screenshotsGrid">
     <div class="polaroid" style="--rot:-3deg;">
       <div class="img-ph">📱</div>
-      <p class="caption">CAMBIAR: captura 1</p>
     </div>
     <div class="polaroid" style="--rot:2deg;">
       <div class="img-ph">😭</div>
-      <p class="caption">CAMBIAR: captura 2</p>
     </div>
   </div>
 </section>
@@ -719,10 +797,11 @@ section {
 <!-- ═══════════════════════════════════════════════════════ -->
 <section id="surprise">
   <p class="sec-label reveal" style="color:var(--salmon);">✦ lo mejor para el final</p>
-  <h2 class="sec-title reveal">🎁 SORPRESA<br><span>ESPECIAL</span></h2>
+  <h2 class="sec-title reveal">🎁 FELIZ<br><span>CUMPLEAÑOS</span></h2>
 
   <div class="surprise-inner">
     <div class="gift-box reveal" id="giftBox" onclick="revealSurprise()">
+      <!-- Regalo SVG animado -->
       <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
         <rect x="15" y="50" width="90" height="60" rx="6" fill="#9B1D20"/>
         <rect x="10" y="38" width="100" height="20" rx="4" fill="#C0392B"/>
@@ -736,6 +815,7 @@ section {
       </svg>
     </div>
 
+    <!-- CAMBIAR: texto debajo del regalo antes de abrir -->
     <p class="reveal" style="font-family:var(--font-hand);font-size:18px;color:var(--muted);margin-top:-8px;">
       toca para abrir ✨
     </p>
@@ -755,14 +835,23 @@ section {
 <section id="final">
   <div class="final-inner">
     <div class="heart-anim reveal">🧡</div>
-    <p class="reveal" style="font-family:var(--font-hand);font-size:15px;color:var(--salmon-lt);opacity:0.9;">
+    <p class="final-note reveal">
+      "gracias por existir y ser la persona más especial.<br>
+      espero que este año sea increíble para ti. 🎂"
+    </p>
+    <p class="reveal" style="font-family:var(--font-hand);font-size:15px;color:var(--salmon-lt);opacity:0.7;">
       con mucho cariño ✦
     </p>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════════ -->
-<!-- JAVASCRIPT -->
+<!-- LIGHTBOX -->
+<div id="lightbox" onclick="closeLightbox()">
+  <span id="lightbox-close" onclick="closeLightbox()">✕</span>
+  <img id="lightbox-img" src="" alt="" style="display:none;">
+</div>
+
+
 <!-- ═══════════════════════════════════════════════════════ -->
 <script>
 
@@ -770,15 +859,26 @@ section {
    DATOS QUE DEBES CAMBIAR
    ───────────────────────────────────────────────────────── */
 
-// WIND BREAKER: agrega aquí tu panel
+// MANGA: agrega aquí tus paneles
+// src: ruta de la imagen en tu repo (ej: "manga/panel1.jpg")
+// comment: tu comentario gracioso sobre ese panel
 const mangaPanels = [
-  { src: "", comment: "" },
+  { src: "", comment: "CAMBIAR: pon aquí el comentario del panel 1" },
+  { src: "", comment: "CAMBIAR: comentario del panel 2" },
+  { src: "", comment: "CAMBIAR: comentario del panel 3" },
+  { src: "", comment: "CAMBIAR: comentario del panel 4" },
 ];
 
-// SCREENSHOTS: agrega tus capturas (solo 2)
+// SCREENSHOTS: agrega tus capturas de pantalla
+// src: ruta de la imagen (ej: "screenshots/cap1.jpg")
+// caption: pie de foto gracioso
 const screenshotsData = [
   { src: "", caption: "CAMBIAR: pie de foto 1", rot: -3 },
   { src: "", caption: "CAMBIAR: pie de foto 2", rot:  2 },
+  { src: "", caption: "CAMBIAR: pie de foto 3", rot: -1 },
+  { src: "", caption: "CAMBIAR: pie de foto 4", rot:  3 },
+  { src: "", caption: "CAMBIAR: pie de foto 5", rot: -2 },
+  { src: "", caption: "CAMBIAR: pie de foto 6", rot:  1 },
 ];
 
 /* ─────────────────────────────────────────────────────────
@@ -811,7 +911,7 @@ function startExperience() {
   document.getElementById('audio-bar').classList.remove('paused');
   launchConfetti();
   setTimeout(() => {
-    document.getElementById('personajes').scrollIntoView({ behavior: 'smooth' });
+    document.getElementById('anime').scrollIntoView({ behavior: 'smooth' });
   }, 600);
 }
 
@@ -874,7 +974,7 @@ function launchConfetti() {
 })();
 
 /* ─────────────────────────────────────────────────────────
-   TABS DE PERSONAJES
+   TABS DE ANIME
    ───────────────────────────────────────────────────────── */
 function showTab(id) {
   document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
@@ -884,13 +984,42 @@ function showTab(id) {
 }
 
 /* ─────────────────────────────────────────────────────────
-   WIND BREAKER READER
+   MANGA READER
    ───────────────────────────────────────────────────────── */
+let currentPanel = 0;
+
 function initManga() {
   if (!mangaPanels[0].src) return;
   document.getElementById('mangaPanelPh').style.display = 'none';
   document.getElementById('mangaPanel').style.display = 'block';
-  document.getElementById('mangaPanel').src = mangaPanels[0].src;
+  loadPanel(0);
+}
+
+function loadPanel(idx) {
+  const img = document.getElementById('mangaPanel');
+  const ph = document.getElementById('mangaPanelPh');
+  const comment = document.getElementById('panelComment');
+  const counter = document.getElementById('panelCounter');
+  const panel = mangaPanels[idx];
+  counter.textContent = `panel ${idx + 1} / ${mangaPanels.length}`;
+  comment.textContent = panel.comment;
+  if (panel.src) {
+    img.src = panel.src;
+    img.style.display = 'block';
+    ph.style.display = 'none';
+  } else {
+    img.style.display = 'none';
+    ph.style.display = 'flex';
+  }
+  document.getElementById('prevBtn').disabled = idx === 0;
+  document.getElementById('nextBtn').disabled = idx === mangaPanels.length - 1;
+}
+
+function changePanel(dir) {
+  const next = currentPanel + dir;
+  if (next < 0 || next >= mangaPanels.length) return;
+  currentPanel = next;
+  loadPanel(currentPanel);
 }
 
 /* ─────────────────────────────────────────────────────────
@@ -931,7 +1060,7 @@ function revealSurprise() {
 /* ─────────────────────────────────────────────────────────
    SCROLL REVEAL & NAV DOTS
    ───────────────────────────────────────────────────────── */
-const sections = ['hero','personajes','windbreaker','gaming','mlp','southpark','screenshots','surprise','final'];
+const sections = ['hero','anime','manga','gaming','mlp','southpark','screenshots','surprise','final'];
 const dots = document.querySelectorAll('.dot');
 
 const sectionObserver = new IntersectionObserver((entries) => {
@@ -964,10 +1093,28 @@ function goTo(idx) {
 }
 
 /* ─────────────────────────────────────────────────────────
-   INIT
+   LIGHTBOX: toca cualquier imagen o video para ampliar
    ───────────────────────────────────────────────────────── */
-initManga();
-buildScreenshots();
+function openLightbox(src) {
+  const lb = document.getElementById('lightbox');
+  const img = document.getElementById('lightbox-img');
+  img.src = src;
+  img.style.display = 'block';
+  lb.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('open');
+  document.getElementById('lightbox-img').src = '';
+  document.body.style.overflow = '';
+}
+// Hacer clickeables todas las imágenes y videos al cargar
+document.addEventListener('click', function(e) {
+  const img = e.target.closest('img.char-media, img.mlp-img, img.panel-img, img.sp-img2, .game-card img, .polaroid img');
+  if (img && img.src) { e.stopPropagation(); openLightbox(img.src); }
+}, true);
+
+
 
 </script>
 </body>
