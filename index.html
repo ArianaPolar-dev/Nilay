@@ -617,10 +617,7 @@ section {
   <!-- TAB: SUKUNA -->
   <div class="tab-panel active" id="tab-sukuna">
     <div class="char-card">
-      <div class="char-media-placeholder">
-        <span class="icon-ph">👹</span>
-        <span>CAMBIAR: fanart o edit de Sukuna</span>
-      </div>
+      <img class="char-media" src="SUKUNA.jpg" alt="Sukuna" onclick="openLightbox(this.src)" style="cursor:zoom-in;">
       <div class="char-info">
         <p class="char-name">Ryomen Sukuna</p>
         <p class="char-from">JUJUTSU KAISEN</p>
@@ -631,10 +628,7 @@ section {
   <!-- TAB: BAKUGO -->
   <div class="tab-panel" id="tab-bakugo">
     <div class="char-card">
-      <div class="char-media-placeholder">
-        <span class="icon-ph">💥</span>
-        <span>CAMBIAR: fanart o edit de Bakugo</span>
-      </div>
+      <img class="char-media" src="22589189c9aa983c6c7bc291d9ca5e87.jpg" alt="Bakugo" onclick="openLightbox(this.src)" style="cursor:zoom-in;">
       <div class="char-info">
         <p class="char-name">Katsuki Bakugo</p>
         <p class="char-from">MY HERO ACADEMIA</p>
@@ -646,9 +640,10 @@ section {
   <div class="tab-panel" id="tab-zuko">
     <div class="char-card">
       <p class="char-from" style="text-align:center;padding:10px 0 0;font-size:10px;letter-spacing:2px;color:var(--salmon);">✦ AVATAR</p>
-      <div class="video-placeholder">
-        <span style="font-size:32px;">🔥</span>
-        <span>CAMBIAR: edit de Zuko</span>
+      <div class="video-wrap">
+        <video controls playsinline style="width:100%;border-radius:0;display:block;background:#000;">
+          <source src="ZUKO.mp4" type="video/mp4">
+        </video>
       </div>
       <div class="char-info">
         <p class="char-name">Zuko</p>
@@ -661,9 +656,10 @@ section {
   <div class="tab-panel" id="tab-toph">
     <div class="char-card">
       <p class="char-from" style="text-align:center;padding:10px 0 0;font-size:10px;letter-spacing:2px;color:var(--salmon);">✦ AVATAR</p>
-      <div class="video-placeholder">
-        <span style="font-size:32px;">🪨</span>
-        <span>CAMBIAR: edit de Toph</span>
+      <div class="video-wrap">
+        <video controls playsinline style="width:100%;border-radius:0;display:block;background:#000;">
+          <source src="o083gA1AEITPiBUBCU10QEMBVYPCa4hg1wi4H.mp4" type="video/mp4">
+        </video>
       </div>
       <div class="char-info">
         <p class="char-name">Toph</p>
@@ -675,10 +671,7 @@ section {
   <!-- TAB: XIAO -->
   <div class="tab-panel" id="tab-xiao">
     <div class="char-card">
-      <div class="char-media-placeholder">
-        <span class="icon-ph">🌿</span>
-        <span>CAMBIAR: fanart de Xiao</span>
-      </div>
+      <img class="char-media" src="e3d01078ea2ee74ecafe39e9603a1347.jpg" alt="Xiao" onclick="openLightbox(this.src)" style="cursor:zoom-in;">
       <div class="char-info">
         <p class="char-name">Xiao</p>
         <p class="char-from">GENSHIN IMPACT</p>
@@ -695,12 +688,7 @@ section {
   <h2 class="sec-title reveal">WIND <span>BREAKER</span></h2>
 
   <div class="manga-reader reveal">
-    <!-- Un solo panel -->
-    <img id="mangaPanel" class="panel-img" src="" alt="Panel de manga" style="display:none;">
-    <div id="mangaPanelPh" class="panel-img-placeholder">
-      <span style="font-size:36px;opacity:0.4;">📖</span>
-      <span>CAMBIAR: agrega el panel aquí</span>
-    </div>
+    <img id="mangaPanel" class="panel-img" src="SAKURA.jpg" alt="Panel Wind Breaker" onclick="openLightbox(this.src)" style="display:block;cursor:zoom-in;">
   </div>
 </section>
 
@@ -713,14 +701,12 @@ section {
 
   <div class="game-grid reveal">
     <div class="game-card">
-      <div class="img-ph">⚔️</div>
-      <!-- <img src="marcel.jpg" alt="Marcel"> -->
+      <img src="MARCEL.jpg" alt="Marcel" onclick="openLightbox(this.src)" style="cursor:zoom-in;width:72px;height:72px;border-radius:50%;object-fit:cover;margin:0 auto 10px;border:2px solid var(--salmon);display:block;">
       <p class="g-name">Marcel</p>
       <p class="g-from">MOBILE LEGENDS</p>
     </div>
     <div class="game-card">
-      <div class="img-ph">🥊</div>
-      <!-- <img src="edgar.jpg" alt="Edgar"> -->
+      <img src="68e260869d8354c216400abc08951fad.jpg" alt="Edgar" onclick="openLightbox(this.src)" style="cursor:zoom-in;width:72px;height:72px;border-radius:50%;object-fit:cover;margin:0 auto 10px;border:2px solid var(--salmon);display:block;">
       <p class="g-name">Edgar</p>
       <p class="g-from">BRAWL STARS</p>
     </div>
@@ -735,15 +721,16 @@ section {
   <h2 class="sec-title reveal">🦄 MY LITTLE <span>PONY</span></h2>
 
   <div class="mlp-grid reveal">
-    <div class="mlp-img-ph"><span style="font-size:32px;">🦄</span><span>fanart 1</span></div>
-    <div class="mlp-img-ph"><span style="font-size:32px;">💜</span><span>fanart 2</span></div>
-    <div class="mlp-img-ph"><span style="font-size:32px;">🌈</span><span>fanart 3</span></div>
-    <div class="mlp-img-ph"><span style="font-size:32px;">✨</span><span>fanart 4</span></div>
+    <img class="mlp-img" src="descarga (3).png" alt="MLP fanart" onclick="openLightbox(this.src)" style="cursor:zoom-in;">
+    <img class="mlp-img" src="cd81836d8f1f0da6b7a2595ee9b66c08.jpg" alt="MLP fanart" onclick="openLightbox(this.src)" style="cursor:zoom-in;">
+    <img class="mlp-img" src="7634ffb03a2f19a6554c04d973a724a3.jpg" alt="MLP fanart" onclick="openLightbox(this.src)" style="cursor:zoom-in;">
+    <img class="mlp-img" src="3eeeae36d81f5ab431c6c617640e0e8b.jpg" alt="MLP fanart" onclick="openLightbox(this.src)" style="cursor:zoom-in;">
   </div>
 
-  <div class="video-placeholder reveal" style="max-width:420px;width:100%;">
-    <span style="font-size:28px;">🎬</span>
-    <span>CAMBIAR: video/edit de MLP</span>
+  <div class="video-wrap reveal" style="max-width:420px;width:100%;">
+    <video controls playsinline style="width:100%;display:block;background:#000;">
+      <source src="APPLE.mp4" type="video/mp4">
+    </video>
   </div>
 </section>
 
@@ -763,15 +750,10 @@ section {
 
     <!-- CAMBIAR: imagen de Craig -->
     <div class="sp-img-wrap">
-      <span class="img-ph">🏔️</span>
-      <!-- <img src="craig.jpg" alt="Craig South Park"> -->
+      <img src="3b7bf796d5981ffe500eea048fba62b5.jpg" alt="Craig" onclick="openLightbox(this.src)" style="cursor:zoom-in;">
     </div>
 
-    <!-- CAMBIAR: otra imagen o fanart opcional -->
-    <div class="sp-img2-ph">
-      <span>CAMBIAR: otra imagen opcional</span>
-    </div>
-    <!-- <img class="sp-img2" src="craig-fanart.jpg" alt="Craig fanart"> -->
+    <img class="sp-img2" src="9964a46057e03916cba42df71a358e9f.jpg" alt="Craig fanart" onclick="openLightbox(this.src)" style="cursor:zoom-in;">
   </div>
 </section>
 
@@ -783,11 +765,11 @@ section {
   <h2 class="sec-title reveal">MOMENTO CHISTOSO<br><span>DEL MES</span></h2>
 
   <div class="screenshots-grid reveal" id="screenshotsGrid">
-    <div class="polaroid" style="--rot:-3deg;">
-      <div class="img-ph">📱</div>
+    <div class="polaroid" style="--rot:-3deg;" onclick="openLightbox('photo_2026-06-03_23-58-17.jpg')" style="cursor:zoom-in;">
+      <img src="photo_2026-06-03_23-58-17.jpg" alt="captura">
     </div>
-    <div class="polaroid" style="--rot:2deg;">
-      <div class="img-ph">😭</div>
+    <div class="polaroid" style="--rot:2deg;" onclick="openLightbox('photo_2026-06-03_23-58-21.jpg')" style="cursor:zoom-in;">
+      <img src="photo_2026-06-03_23-58-21.jpg" alt="captura">
     </div>
   </div>
 </section>
@@ -821,9 +803,10 @@ section {
     </p>
 
     <div id="surprise-content">
-      <div class="video-placeholder" style="max-width:100%;">
-        <span style="font-size:36px;">🎬</span>
-        <span>CAMBIAR: tu video especial aquí</span>
+      <div class="video-wrap" style="max-width:100%;margin-bottom:16px;">
+        <video controls playsinline style="width:100%;display:block;background:#000;">
+          <source src="video_2026-05-31_20-34-27 (online-video-cutter.com).mp4" type="video/mp4">
+        </video>
       </div>
     </div>
   </div>
